@@ -17,7 +17,11 @@ Operacje typu if, podobne do excela
 
 Przykład z freebasem:)
 
-używamy freebase'a, jak już poprawimy
+Najpierw musimy ustawić z freebase'a jakie dane mamy:
+	
+    klikamy reconcile > start reconiling > freebase reconciliation service
+
+używamy freebase'a, jak już poprawimy 
 
     klikamy add columns from Freebase
 
@@ -35,8 +39,17 @@ Możemy obsługiwać jsona poprzez parseJson
 	  
     parseJson(value)["Plot"]
 	
-Możemy to wyeksportwać do jsona, albo do MySQL'a:
+Możemy to wyeksportwać do jsona, albo do MySQL'a:\
 
-    INSERT INTO sheakspearAdaptations (0,{{jsonize(cells["Title"].value)}},{{jsonize(cells["Adaptations"].value)}},{{jsonize(cells["Runtime"].value)}},{{jsonize(cells["Plot"].value)}},{{jsonize(cells["Directed by"].value)}})
+naglowek:
     
+    INSERT INTO sheakspearAdaptiions (id, title, adaptation, runtime, plot, directed_by) VALUES
+
+tresc:
+
+    (0,{{jsonize(cells["Title"].value)}},{{jsonize(cells["Adaptations"].value)}},{{jsonize(cells["Runtime"].value)}},{{jsonize(cells["Plot"].value)}},{{jsonize(cells["Directed by"].value)}})
+
+separator:
+    ,
+plus nowa linia
 A nawet do innych formatów, np: kodowanie wikipedii.
